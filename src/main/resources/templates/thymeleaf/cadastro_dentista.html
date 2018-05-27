@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parallax Template - Materialize</title>
+
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link href="css/materialize.css" type="text/css" rel="stylesheet"
+	media="screen,projection" />
+<link href="css/style.css" type="text/css" rel="stylesheet"
+	media="screen,projection" />
+</head>
+<body>
+	<nav class="white" role="navigation">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="#" class="brand-logo">ProOdonto</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">Navbar Link</a></li>
+			</ul>
+
+			<ul id="nav-mobile" class="sidenav">
+				<li><a href="#">Navbar Link</a></li>
+			</ul>
+			<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i
+				class="material-icons">menu</i></a>
+		</div>
+	</nav>
+
+	<div class="row">
+		<form class="col s12" action="#" th:action="@{/adicionarDentista}"
+			th:object="${dentista}" method="post">
+			<div class="row">
+				<div class="input-field col s12">
+					<input type="text" th:field="*{cpf}" class="validate">
+					<label for="cpf">CPF</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input type="text" th:field="*{nome}" class="validate">
+					<label for="nome">Nome</label>
+				</div>
+				<div class="input-field col s6">
+					<input th:field="*{sobrenome}" type="text" class="validate"> <label
+						for="sobrenome">Sobrenome</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input type="text" th:field="*{usuario}" class="validate">
+					<label for="usuario">Usuario</label>
+				</div>
+				<div class="input-field col s6">
+					<input th:field="*{senha}" type="password" class="validate"> <label
+						for="senha">Senha</label>
+				</div>
+			</div>
+			<button type="submit" value="Submit" class="btn btn-default">Cadastrar</button>
+		</form>
+	</div>
+
+	<footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Em breve</h5>
+          <p class="grey-text text-lighten-4">.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Em breve</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Em breve</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+       <a class="brown-text text-lighten-3" href="http://materializecss.com">ProOdonto</a>
+      </div>
+    </div>
+  </footer>
+
+
+	<!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js/materialize.js"></script>
+	<script src="js/init.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.datepicker').datepicker();
+		});
+		$(document).ready(function(){
+		    $('.timepicker').timepicker();
+		  });
+	</script>
+
+</body>
+</html>
